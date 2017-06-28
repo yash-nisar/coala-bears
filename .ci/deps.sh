@@ -55,3 +55,12 @@ if [ ! -e ~/phpmd/phpmd ]; then
   sudo chmod +x phpmd.phar
   sudo mv phpmd.phar ~/phpmd/phpmd
 fi
+
+# astyle installation
+if [ ! -e ~/astyle/build/gcc/bin/astyle ]; then
+  wget "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.0.1/astyle_3.0.1_linux.tar.gz?r=&ts=1499017588&use_mirror=excellmedia" -O ~/astyle.tar.gz
+  tar -xvzf ~/astyle.tar.gz -C ~/
+  cd ~/astyle/build/gcc
+  make
+  sudo make install
+fi
